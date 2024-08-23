@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>함수</title>
+	<style>
+		body {
+			padding-top:20px;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+	<script>		
+		   let num1 = prompt("첫번째 숫자를 정하세요");
+		   let num2 = prompt("두번째 숫자를 정하세요");
+		   num1= parseInt(num1);
+		   num2= parseInt(num2);
+		   
+       function addNumber(a, b){
+        return a + b;
+	   }
+
+	   document.write("두 수를 더한 값 : " + addNumber(num1, num2));
+ 
+	</script>	
+</body>
+</html>

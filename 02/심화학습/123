@@ -1,0 +1,9 @@
+
+document.querySelector("#btn").addEventListener("click",()=>{
+
+function convert(){
+const hw = +prompt("화씨온도");
+const cc = (f-32)/1.8.toFixed(2);
+alert(cc);
+
+}});

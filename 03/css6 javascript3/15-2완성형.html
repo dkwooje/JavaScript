@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM event 객체</title>
+  <style>
+    #container {
+      width:300px;
+      margin:10px auto;
+    }
+  </style>
+</head>
+<body>
+	<div id="container">
+		<img src="/images/easys-1.jpg" id="cover">	
+  </div>
+  
+	<script>
+
+    document.querySelector("#cover").addEventListener("mouseover", () => cover.src = "/images/easys-2.jpg");
+    document.querySelector("#cover").addEventListener("mouseout", () => cover.src = "/images/easys-1.jpg");
+
+
+	</script>
+</body>
+</html>

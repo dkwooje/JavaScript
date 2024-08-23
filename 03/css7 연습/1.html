@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+form{
+
+    width: 500px;
+    margin: 30px auto;
+}
+#container{
+
+    margin-bottom: 20px;
+
+
+}
+button{
+    margin-bottom: 20px;
+}
+
+</style>
+
+
+</head>
+<body>
+    <div id="container">
+    <h1>Practice 1</h1>
+    <form>
+        <fieldset>
+            <legend>취미 </legend>
+            <input type="checkbox" name="0" value="전체선택"><label for="0">전체선택</label>
+            <input type="checkbox" name="1" value="종합"><label for="1">종합</label>
+            <input type="checkbox" name="2" value="소설"><label for="2">소설</label>
+            <input type="checkbox" name="3" value="시/에세이"><label for="3">시/에세이</label>
+            <input type="checkbox" name="4" value="경제/경영"><label for="4">경제/경영</label>
+            <input type="checkbox" name="5" value="자기계발"><label for="5">자기계발</label>
+            <br>
+            <input type="checkbox" name="6" value="아동"><label for="6">아동</label>
+            <input type="checkbox" name="7" value="여행"><label for="7">여행</label>
+            <input type="checkbox" name="8" value="과학"><label for="8">과학</label>
+            <input type="checkbox" name="9" value="역사/문화"><label for="9">역사/문화</label>
+            <input type="checkbox" name="10" value="외국어"><label for="10">외국어</label>
+            <input type="checkbox" name="11" value="컴퓨터"><label for="11">컴퓨터</label>
+            <input type="checkbox" name="12" value="만화"><label for="12">만화</label>
+
+        </fieldset>
+    </form>
+
+    <button id="btn">카테고리 선택</button>
+    <br>
+    <textarea cols="100" rows="30"></textarea>
+    </div>
+    <script>
+
+        const checkboxes = document.querySelectorAll("#input");
+        checkboxes[0].addEventListener("click", () =>{
+                for(let i =1; i<checkboxes.length; i++){
+                    checkboxes[i].checked = checkboxes[0].checked;
+                }
+        })
+        for(let i=1; i<checkboxes.length; i++){
+            checkboxes[i].addEventListener("click", (e) =>{
+                let toggle;
+                if(e.target.checked == false){
+                    toggle=false;
+                    checkboxes[0].checked =false;
+                }
+                else{
+                    for(let i=1; i<checkboxes.length; i++){
+                        if(checkboxes[i].checked == false){
+                            checkboxes[0].checked = false;
+                            break;
+                         }
+                         toggle=ture;
+                    }
+                }
+                checkboxes[0].checked =toggle;
+            })
+        }
+            const btn = document.querySelector("#btn");
+            const textarea = document.querySelector("textarea");
+            btn.addEventListener("click", () => {
+                textarea.innerText ="";
+
+                        let categories ="";
+                        for(let i=0; i<checkboxes.length; i++){
+                            if(checkboxes[i]; ){
+                            categories = categories+", "+ checkboxes[i].value;
+
+                            }
+                        }
+                        textarea.innerText =categories;
+
+            })
+    </script>
+
+
+
+</body>
+</html>

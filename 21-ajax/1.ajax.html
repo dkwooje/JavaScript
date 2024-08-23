@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src ="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+    <div id="result"></div>
+    <input type="text" id="msg">
+    <input type="button" value="결과받기" id="getResult">
+</body>
+
+<script>
+    /*
+$("#getResult").click(function() {
+  $("#result").html("");
+  $.ajax({
+          url:"http://localhost:9191/ajax_server.php",
+          dataType: "json",
+          type: "POST",
+          data: { msg:$("#msg").val()},
+                  success:function (result){
+                      if(result["result"] ==true){
+                          $("#result").html(result["msg"]);
+        }
+        },
+      });
+      });
+    */
+</script>
+
+</html>

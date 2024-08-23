@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>서버에서 사용자 정보 가져오기</title>
+  <link rel="stylesheet" href="/css/user-json.css">
+</head>
+<body>
+  <h1>회원 정보</h1>
+  <div id="result"></div>
+  <script>
+   const url = 'https://jsonplaceholder.typicode.com/users';
+
+/* 
+// XMLHttpRequest를 이용해서 자료를 가져와서 console에 출력
+       const xhr = new XMLHttpRequest();
+        xhr.open("GET",url);
+        xhr.send();
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                const json = JSON.parse(xhr.responseText);
+                console.log(json);
+            }
+        }
+ */
+/*
+//fatch를 이용해서 자료를 가져와서 console에 출력
+        fetch(url).then((response) => response.json())
+        .then((data) => console.log(data))
+*/
+/*
+//async와 await를 이용해서 자료를 가져와서 console에 출력
+    async function init(){
+      const response = await fetch(url);
+      const users = await response.json();
+      console.log(users);
+    }
+init();
+*/
+
+async function init(){
+      const response = await fetch(url);
+      const users = await response.json();
+      display(users); //array형
+    }
+
+  function display(users){
+    const result = document.querySelector("#result");
+    let output = "";
+    users.forEach(user => {
+      output +=  `<ul><li>${user.name}</li>
+                      <li>${user.username}</li>
+                      <li>${user.email}</li></ul>`;
+    });
+    result.innerHTML = output;
+  }    
+  init();
+
+  
+  </script>
+</body>
+</html>

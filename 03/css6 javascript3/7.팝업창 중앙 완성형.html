@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Window 객체</title>
+</head>
+<body>
+    <p>문서를 열면 팝업 창이 표시됩니다</p>
+    <script>
+      function openCenter(addr, name, w, h){                                                                                    
+        const left = (screen.availWidth-w)/2   // 팝업 창의 왼쪽 좌표                                                       
+        const t = (screen.availHeight-h)/2 ;   // 팝업 창의 위쪽 좌표                                                         
+        const opt = "left=" + left + ",top=" + t + ",width=" + w + ",height=" + h;  //left top width heigh : 변수이다. 각 변수에 값을 넣어주는 형태이다.                          
+        window.open(addr, name, opt);    //opt: 문자열이다. 이 문자열이 left top width heigh를 포함함한다.                                                                                
+      }                                                                         
+      openCenter("notice.html","pop", 500, 400)                                                   
+    </script>
+</body>
+</html> 

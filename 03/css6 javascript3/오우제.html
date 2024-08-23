@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	#container{
+		width: 100%;
+	}
+  #odr input[type="text" ]{
+	border: 1px solid #000000;
+	width: 300px;
+	font-size: 13px;
+	border-radius: 3px;
+	padding: 5px;
+	margin: 5px;
+ 	 }
+	#odr input[name="content"]{
+	
+	border: 1px solid #000000;
+	height: 200px;
+	text-align:start;
+	}
+	#odr button[type="submit"]{
+	border: 1px solid #222;
+	display:list-item;
+	font-size: 16px;
+	letter-spacing: 1px;
+	margin: auto;
+	padding: 7px 25px;
+
+	}
+	#tabi{
+		border: 1px solid black;
+		font-size: 13px;
+		padding: 5px;
+		margin: 5px;
+		height: 100px;
+		width: 100%;
+	}
+	th{
+		border: 1px solid black;
+		text-align: center;
+		background-color: rgb(253, 150, 31);
+		color: white;
+		height: 15px;
+	}
+	td{
+		border: 1px solid black;
+		text-align: left;
+		background-color: rgb(253, 253, 212);
+		height: 10px;
+	}
+	#num{
+		width: 10%;
+	}
+	#nan{
+		width: 50%;
+	}
+	#sod{
+		width: 15%
+	}
+	#rtr{
+		width: 15%
+	}
+	#wqs{
+		width: 10%
+	}
+	#rtw{
+		width: 90%;
+	}
+	#ter{
+		width: 10%;
+	}
+
+  </style>
+<body>
+<div id="container">
+	<form id="action">
+	<fieldset>
+		<legend>공지사항 작성하기</legend>
+		<ul id="odr">
+		  <li>
+			<label for="title">제목</label>
+			<input id="title" name="title" type="text" placeholder="제목을 입력하시오." required>
+		  </li>
+		  <li>
+			<label for="content">내용</label>
+			<input id="content" name="content" type="text" placeholder="내용을 입력하시오." required >
+		  </li>
+		  <li>
+			<label for="uploadFile">첨부파일<button>파일 선택</button><span>선택된 파일 없음</span></label>
+			
+		  </li>  
+		  <button type="submit">작성하기 </button> 
+		</ul>
+		
+	  </fieldset>
+
+	</form>
+<hr>
+	<table id="tabi">
+		<tr>
+			<th id="num">번호</th>
+			<th id="nan" colspan="2">제목</th>
+			<th id="sod">작성자</th>
+			<th id="rtr">작성일</th>
+			<th id="wqs">조회수</th>
+		</tr>
+		<tr>
+			<td><span>9</span></td>
+			<td><span class="rtw">공지사항 제목 9</span></td>
+			<td><button class="ter">바로가기</button></td>
+			<td><span>user01</span></td>
+			<td><span>2021-03-29</span></td>
+			<td><span>34</span></td>
+		</tr>
+		<tr>
+			<td><span>6</span></td>
+			<td><span class="rtw">공지사항 제목 6</span></td>
+			<td><button class="ter">바로가기</button></td>
+			<td><span>answ445</span></td>
+			<td><span>2021-03-12</span></td>
+			<td><span>67</span></td>
+		</tr>
+		<tr>
+			<td><span>3</span></td>
+			<td><span class="rtw">공지사항 제목 3</span></td>
+			<td><button class="ter">바로가기</button></td>
+			<td><span>testg12</span></td>
+			<td><span>2021-03-01</span></td>
+			<td><span>98</span></td>
+		</tr>
+		<tr>
+			<td><span>2</span></td>
+			<td><span class="rtw">공지사항 제목 2</span></td>
+			<td><button class="ter">바로가기</button></td>
+			<td><span>palwe3</span></td>
+			<td><span>2021-01-02</span></td>
+			<td><span>85</span></td>
+		</tr>
+		<tr>
+			<td><span>1</span></td>
+			<td><span class="rtw">공지사항 제목 1</span></td>
+			<td><button class="ter">바로가기</button></td>
+			<td><span>xml23</span></td>
+			<td><span>2020-12-24</span></td>
+			<td><span>124</span></td>
+		</tr>
+		<tr>
+			<th colspan="4">전체공지사항 갯수</th>
+			<th colspan="2">5개</th>
+		</tr>
+	</table>
+</div>
+
+</body>
+</html>

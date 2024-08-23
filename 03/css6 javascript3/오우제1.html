@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+body {
+	background: #ccc;
+	padding: 20px;	
+}
+
+#signup {
+	background:#a9d8ff;
+	border:1px solid rgb(128, 225, 255) ;
+	border-radius: 5px;
+	padding: 20px;
+	width: 400px;	
+	margin:30px auto;
+}
+		
+#signup fieldset {
+	border: 1px solid #ccc;
+	margin-bottom: 30px;
+    background-color: #e2e1e1;
+}
+		
+#signup ul li {
+	line-height: 30px;
+	list-style: none;
+	padding: 5px 10px;
+	margin-bottom: 2px;
+
+}
+			
+#signup button {	
+	border: 1px solid #222;
+	display: block;
+	font-size: 16px 맑은고딕,굴림,돋움;
+	letter-spacing: 1px;
+	margin: auto;
+	padding: 7px 25px;
+    width: 100%;
+    background-color: rgb(101, 172, 101);
+}
+#signup label{
+	float: left;
+	font-size: 13px;
+	width: 110px;
+    
+}
+#signup input:not([type=sdasgqe]){
+    border:1px dashed #000000;
+  }
+#signup input[label=pwd3]{
+
+        font-size: large;
+}
+#qwer{
+    font-size: 13px;
+
+}
+</style>
+
+
+
+
+<body>
+    <form id="signup">
+        <fieldset>
+          <ul>
+            <li span class="check">
+              <label for="userid">아이디</label>
+              <input id="userid" name="userid" type="text" required >
+            </li>
+            <li span class="check">
+              <label for="pwd1">패스워드</label>
+              <input id="pwd1" name="pwd1" type="password"  required >
+            </li>
+            <li span class="check">
+                <span id="qwer"></span>
+            </li>        
+            <li span class="check">
+              <label for="pwd2">패스워드 확인</label>
+              <input id="pwd2" name="pwd2" type="password" required>
+            </li>        
+            <li span class="check">
+                <label for="email">이메일</label>
+                <input id="email" name="email" type="email" >
+              </li>
+              <li span class="check">
+                <label for="address">주소</label>
+                <input id="address" name="address" type="address" >
+              </li>
+          </ul>
+          <button>가입</button>
+        </fieldset>
+        </form>
+
+<script>
+
+   document.querySelector("#userid").addEventListener("click", () => alert("필수 입력 항목입니다."));
+   document.querySelector("#pwd1").addEventListener("click", () => alert("필수 입력 항목입니다."));
+   document.querySelector("#pwd2").addEventListener("click", () => alert("필수 입력 항목입니다."));
+   document.querySelector("#pwd1").addEventListener("click", () => pwd1.write("영문자 대/소문자 특수문자, 숫자 포함 8~32자"));
+
+
+</script>
+
+</body>
+</html>

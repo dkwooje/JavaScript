@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/fetch.css">
+</head>
+<body>
+    <div id = "container">
+        <h1>수강생 명단</h1>
+        <div id="result"></div>
+    </div>
+    <script>
+      /* 
+       const xhr = new XMLHttpRequest();
+        xhr.open("GET","student-2.json");
+        xhr.send();
+
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                const students = JSON.parse(xhr.responseText);
+                (function(contents){
+                    let output = "";
+                    for(let content of contents){
+                        output += `
+                        <h2>${content.name}</h2>
+                            <ul>
+                                <li>전공 : ${content.major} </li>
+                                <li>학년 : ${content.grade} </li>
+                            </ul>
+                        <hr>
+                        `;        
+                    }
+                    document.querySelector("#result").innerHTML = output;
+                }(students));
+            }
+        }*/
+       fetch("student-2.json")
+            .then((response) => response.json())
+            .then((json) => { let output = "";
+                   json.forEach(content =>{
+                        output += `
+                        <h2>${content.name}</h2>
+                            <ul>
+                                <li>전공 : ${content.major} </li>
+                                <li>학년 : ${content.grade} </li>
+                            </ul>
+                        <hr>
+                        `;        
+                    });
+                    document.querySelector("#result").innerHTML = output;})
+                    .catch(error => console.log(error));          
+    </script>
+    
+</body>
+</html>

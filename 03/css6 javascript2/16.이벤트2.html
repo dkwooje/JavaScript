@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>자바스크립트 이벤트</title>
+	<link rel="stylesheet" href="/css/function.css">
+</head>
+<body>
+	<ul>
+		<li><a href="#" onclick="changeBg('green')">Green</a></li>
+		<li><a href="#" onclick="changeBg('orange')">Orange</a></li>
+		<li><a href="#" onclick="changeBg('purple')">Purple</a></li>
+		<li><a href="#" onclick="changeBg('black')">Blue</a></li>
+		<li><a href="#" onclick="changeBg('Red')">White</a></li>
+	</ul>		
+	<div id="result"></div>
+	
+	<script>
+		function changeBg(color) {
+			const result = document.querySelector('#result'); //querySelector : 괄호 속에 제공한 선택자와 일치하는 문서 내 첫 번째 Element를 반환
+			result.style.backgroundColor = color;			//일치하는 요소가 없다면 null 반환
+		}
+	</script>
+</body>
+</html>  

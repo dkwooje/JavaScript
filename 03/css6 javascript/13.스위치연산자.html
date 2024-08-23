@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>세션 선택 - switch문</title>
+	<link rel="stylesheet" href="css/switch.css">
+</head>
+<body>	
+	<script>
+		const season = prompt("개월을 입력해 주세요");
+		
+		switch(season) {
+			case"1" : case "3" : case"5" : case"7" : case"8" :case "10" :case"12" : document.write("31일까지 있습니다.");
+				break;
+			case "2" : document.write("28일까지 있습니다.");
+				break;
+			case "4": case "6": case "9": case "11" : document.write("30일까지 있습니다.");
+				break;
+			default: document.write("정확한 월수를 입력해 주세요");
+		}
+	</script>
+</body>
+</html>

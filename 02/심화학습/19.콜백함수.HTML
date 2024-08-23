@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* function order(coffee){
+            document.write(`${coffee} 주문 접수`);
+            setTimeout(() => {
+                document.write(`주문이 완료되었습니다.`);
+            },3000);
+        }
+        function display(result){
+            document.write(`준비가 완료되었습니다`);
+        }
+
+        order("블랙커피");
+        display();
+        */
+        /*
+        function order(coffee){
+            console.log(`${coffee} 주문 접수`);
+            setTimeout(() => {
+                console.log(`주문이 완료되었습니다.`);
+            },3000);
+        }
+        function display(result){
+            console.log(`준비가 완료되었습니다`);
+        }
+        order("블랙커피",display);
+        display();
+        */
+       /*
+       function displayLetter(){
+        console.log("A");
+        setTimeout(() => {
+            console.log("B");
+            setTimeout(() => {
+                console.log("C");
+                setTimeout(() => {
+                    console.log("D");
+                    setTimeout( () => {
+                        console.lof("Stop!");
+                    },1000)
+                },2000)
+            },3000)
+        },4000)       //콜백지옥
+    }
+    */
+   
+        let finepizza = true; //true
+        const pizza = new Promise( (resolve,reject) => {
+            if(finepizza){
+                resolve("피자를 주문합니다.")
+            }
+            else{
+                reject("피자를 주문하지 않습니다.")
+            }
+        });
+
+       // pizza.then(result => console.log(result)).catch(result=>console.log(result));
+        pizza.then(result => console.log(result))
+        .catch(result=>console.log(result))
+        .finally(() => console.log('완료'));
+   </script>
+</body>
+</html>

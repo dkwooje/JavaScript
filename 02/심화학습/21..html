@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const step1 = (callback) => {
+            setTimeout(() => {
+                console.log("피자 도우 준비");
+                callback();
+            }, 2000);
+        };
+        const step2 = (callback) => {
+            setTimeout(() => {
+                console.log("토핑 완료");
+                callback();
+            }, 2000);
+        };
+        const step3 = (callback) => {
+            setTimeout(() => {
+                console.log("굽기 완료");
+                callback();
+            }, 2000);
+        };
+        step1(() =>{
+            step2(() =>{
+                step3(() =>{
+                    console.log("피자가 준비 되었습니다.");
+                });
+            });
+        });
+        
+    </script>
+</body>
+</html>

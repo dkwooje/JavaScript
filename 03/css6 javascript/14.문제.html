@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자리 배치도</title>
+</head>
+<body>
+    <h1>자리 배치도</h1>
+    <script>
+        const count = prompt("몇명인가요?");
+        const row = prompt("한줄당 몇명이 앉을것인가요?");
+        let lows = 0;
+        if( count % row === 0)
+        {
+            lows =  parseInt(count / row);
+        }
+        else{
+            lows = parseInt(count / row) + 1;
+        }
+        document.write("<h1>"+ count +"명을 한 줄에"+ row +  "명씩 않으려면 "+ lows + "만큼 필요합니다");
+    </script>
+</body>
+</html>

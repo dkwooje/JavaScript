@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>자바스크립트 이벤트</title>
+	<link rel="stylesheet" href="css/function.css">
+</head>
+	<style>
+		/* href='#' 단순 앵커. 이게 없으면 마우스를 올릴 때, 손가락이 안뜬다.*/
+		ul{
+			list-style: none;
+			width: 500px;
+		}
+		li{
+			display: inline-block;
+			width: 120px;
+			border: 1px solid #ccc;
+			padding:  10px 15px;
+			text-align: center;
+		}
+		a{
+			text-decoration: none;
+		}
+	</style>
+<body>
+	<ul>
+		<li><a href="#" onmouseout="alert('버튼을 클릭했습니다.')">Green</a></li> 
+		<li><a href="#" onmouseover="alert('버튼을 클릭했습니다.')">Orange</a></li>
+		<li><a href="#" onclick="alert('버튼을 클릭했습니다.')">Purple</a></li>
+		<li><a href="#" onmouseup="alert('버튼을 클릭했습니다.')">Red</a></li>
+		<li><a href="#" onmousedown="alert('버튼을 클릭했습니다.')">Blue</a></li>
+		<li><a href="#" onkeypress="alert('버튼을 클릭했습니다.')">White</a></li>
+		<li><a href="#" onkeyup="alert('버튼을 클릭했습니다.')">Black</a></li>
+	</ul>		
+	<div id="result"></div>
+</body>
+</html>  

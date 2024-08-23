@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List 만들기</title>
+  <link rel="stylesheet" href="/css/todo.css">
+</head>
+<body>
+  <header>
+    <h1>오늘의 할 일</h1>
+  </header>
+  <form>
+    <label for="todo-input">할 일</label>
+    <input type="text" id="todo-input"
+     placeholder="할 일을 입력하세요"
+      required autocomplete="off">
+    <button id="add-button">추가</button>
+  </form>
+  <div id="container">
+    <ul id="todo-list">
+    </ul>
+  </div>
+  <script>
+    const todoInput = document.querySelector("#todo-input");
+    const addButton = document.querySelector("#add-button");
+    const todoList = document.querySelector("#todo-list");
+
+    addButton.addEventListener("click", addTodo);
+    document.addEventListener("DOMContentLoaded", getFromLocal);
+
+    function addTodo(e) {
+      e.preventDefault();
+      //div안에 li태그와 내용을 완성
+      const newDiv = document.createElement("div"); // <div> 만들어짐
+      newDiv.classList.add("todo"); // <div class="todo"> 만들어짐
+      const newTodo = document.createElement("li"); // <li>  </li>
+      newTodo.innerText = todoInput.value; // <li> todoInput요소에 써있는 값 </li>
+      newTodo.classList.add("todo-content"); // <li class='todo-content'> todoInput요소에 있는 값 </li>
+      newDiv.appendChild(newTodo); // <div class="todo"><li class='todo-content'>값</li></div>
+
+      //오른쪽에 버튼을 추가
+      const completeButton = document.createElement("button"); // <button> 만들어짐
+      completeButton.innerText = "완료"; // <button>완료</button>
+      completeButton.classList.add("complete-button"); // <button class='complete-button'>완료</button>
+      newDiv.appendChild(completeButton); //<div class="todo"><li class='todo-content'>값</li> <button class='complete-button'>완료</button></div>
+
+      const deleteButton = document.createElement("button");
+      deleteButton.innerText = "삭제";
+      deleteButton.classList.add("delete-button");
+      newDiv.appendChild(deleteButton);
+
+      todoList.appendChild(newDiv);
+      saveToLocal(todoInput.value);
+      todoInput.value = "";
+    }
+
+    function saveToLocal(todo) {
+      let todos = [];
+      if (localStorage.getItem("todos") === null) {
+        todos = [];
+      } else {
+        todos = JSON.parse(localStorage.getItem("todos"));
+      }
+      todos.push(todo);
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+
+    function getFromLocal() {
+      let todos = [];
+      if (localStorage.getItem("todos") === null) {
+        todos = [];
+      } else {
+        todos = JSON.parse(localStorage.getItem("todos"));
+      }
+      todos.forEach((todo) => {
+        const newDiv = document.createElement("div"); // <div> 만들어짐
+        newDiv.classList.add("todo"); // <div class="todo"> 만들어짐
+        const newTodo = document.createElement("li"); // <li>  </li>
+        newTodo.innerText = todo // <li> todoInput요소에 써있는 값 </li>
+        newTodo.classList.add("todo-content"); // <li class='todo-content'> todoInput요소에 있는 값 </li>
+        newDiv.appendChild(newTodo); // <div class="todo"><li class='todo-content'>값</li></div>
+
+        //오른쪽에 버튼을 추가
+        const completeButton = document.createElement("button"); // <button> 만들어짐
+        completeButton.innerText = "완료"; // <button>완료</button>
+        completeButton.classList.add("complete-button"); // <button class='complete-button'>완료</button>
+        newDiv.appendChild(completeButton); //<div class="todo"><li class='todo-content'>값</li> <button class='complete-button'>완료</button></div>
+
+        const deleteButton = document.createElement("button");
+        deleteButton.innerText = "삭제";
+        deleteButton.classList.add("delete-button");
+        newDiv.appendChild(deleteButton);
+
+        todoList.appendChild(newDiv);
+      });
+    }
+  </script>
+</body>
+</html>

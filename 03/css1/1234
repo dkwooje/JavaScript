@@ -1,0 +1,10 @@
+const userName = '오우제';
+
+document.write(`${userName}님 반갑습니다`);
+``: 매우 유용하다.
+
+const book = {title: '깃허브 입문', pubdat: '2099-12-06', pages: 272, finished: true }
+book.title  
+book['title']
+
+const tree = {top: 'leap', middle: 'stem', bottom: 'root', fruit: 120, flower: 180, angle: false}

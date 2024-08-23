@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Window 객체</title>
+</head>
+<body>
+    <p>문서를 열면 팝업 창이 표시됩니다</p>
+    <script>
+      function openCenter(addr,name,width,height){
+        window.open(addr,name,"");
+      }
+      const left = (screen.availWidth-500)/2;
+      const t = (screen.availHeight-400)/2;
+      window.open("notice.html", "pop","left="+left+", top="+t+",width=500, height=400");       
+   
+   </script>
+</body>
+</html> 

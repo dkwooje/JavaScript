@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="click_me" type="button" value="click me"/>
+    <input id="remove_event" type="button" value="unbind"/>
+    <input id="trigger_event" type="button" value="trigger"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function clickHandler(e){
+            alert("thank you");
+        }
+        $(document).bind('ready',()=>{});
+    </script>
+</body>
+</html>

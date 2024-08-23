@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>연습문제 2</title>
+  <style>
+    table, td, th {
+      border:1px solid #ccc;
+    }
+    td, th {
+      padding:10px 20px;
+    }
+    td:last-child{
+      width:200px;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <fieldset>
+      <h1>프런트엔드 개발자 지원서</h1>
+      <p>HTML,CSS,자바스크립트의 기술을 이해하고 실무 경험이 있는 분을 찾습니다.</p>
+      <p>-------------------------------------------------------------------------</p>
+        <ul>
+          <p><strong>개인 정보</strong></p>
+          <li>
+                  <label for="n-name">이름</label>
+                  <input type="text" id="n-name"  placeholder="공백없이 입력하세요">
+          </li><li>       
+                  <label for="n-tel">연락처</label>
+                  <input type="tel" id="n-tel">
+          </li>
+        </ul>
+        <ul>
+          <p><strong>지원 분야</strong></p>
+          <li>
+            <input type="radio" name="web" id="pub-1">
+            <label for="pub-1">웹 퍼블리싱</label>
+          </li>  
+          <li>
+            <input type="radio" name="web" id="app-1" >
+            <label for="app-1">웹 애플리케이션 개발</label>   
+          </li>
+          <li>
+            <input type="radio" name="web" id="ex-1" >
+            <label for="ex-1">개발 환경 개선</label>    
+          </li>
+        </ul>
+        <ul>
+          <p><strong>지원 동기</strong></p>
+          <li>
+            <label for="memo"></label>
+            <textarea cols="60" rows="5" placeholder="본사 지원 동기를 간략히 써 주세요."></textarea>
+          </li>
+        </ul>
+	        <li>
+				      <input type="submit" value="접수하기"> <input type="reset" value="다시쓰기"> 
+			     </li>
+        </ul>
+    </fieldset>
+  </form>
+</body>
+</html>
